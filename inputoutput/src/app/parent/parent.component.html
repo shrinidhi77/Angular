@@ -1,0 +1,5 @@
+// Parent component
+<app-child [childData_from_parent]="parentData"></app-child>
+
+<app-child (childEvent)="handleChildEvent($event)"></app-child>
+{{childData}}
