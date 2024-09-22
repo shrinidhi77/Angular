@@ -1,0 +1,14 @@
+<p>parent works!</p>
+
+<button (click)="togglechild()"> toggle the child</button>
+
+<input type="text" [(ngModel)]="text_">
+
+<div>
+    {{text_}}
+</div>
+
+
+<app-child *ngIf="isChild" [inputting] = "text_">
+    <h2 #projectContent>content projection pls subscript</h2>
+</app-child>
