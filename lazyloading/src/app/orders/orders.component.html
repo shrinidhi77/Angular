@@ -1,0 +1,32 @@
+<div class="row mt-5" style="border-top: 1px solid">
+    <div class="col-md-4 offset-md-2">
+        <div class="card shadow">
+            <div class="card-body text text-center">
+                <h4>~~List of Orders~~</h4>
+                <table class="table table-bordered table-sm">
+                    <thead class="bg-dark text-light">
+                        <tr>
+                            <th>Order Id</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Bill Amount</th>
+                            <th>Order Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of ordersArray; let i=index">
+                            <td>{{order.orderId}}</td>
+                            <td>{{order.productName}}</td>
+                            <td>{{order.quantity}}</td>
+                            <td>{{order.billAmount | currency:'USD'}}</td>
+                            <td>
+                                <i *ngFor="let startRating of [].constructor(order.orderRating)" class="fa fa-star"
+                                    aria-hidden="true"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

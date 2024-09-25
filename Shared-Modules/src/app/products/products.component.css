@@ -1,0 +1,11 @@
+.card {
+    opacity: 0.75;
+}
+
+.card-body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}

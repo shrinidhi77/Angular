@@ -1,0 +1,31 @@
+<div class="row mt-5">
+    <div class="col-md-8 offset-md-2">
+        <div class="card shadow">
+            <div class="card-body text text-center">
+                <h4>~~List of Orders~~</h4>
+                <table class="table table-bordered table-sm">
+                    <thead class="bg-dark text-light">
+                        <tr>
+                            <th>Order Id</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Bill Amount</th>
+                            <th>Order Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of ordersArray; let i=index">
+                            <td>{{order.orderId}}</td>
+                            <td>{{order.productName}}</td>
+                            <td>{{order.quantity}}</td>
+                            <td>{{order.billAmount | currency:'USD'}}</td>
+                            <td>
+                                <app-rating [ratingValue]="order.orderRating"></app-rating>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

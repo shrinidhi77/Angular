@@ -1,7 +1,7 @@
 <!-- src/app/dashboard/dashboard.component.html -->
 <div class="dashboard-container">
-    <h1>Dashboard</h1>
-    <p *ngIf="user">Welcome, {{ user.displayName }}!</p>
-    <button (click)="logout()">Logout</button>
-  </div>
-  
+  <h1>Dashboard</h1>
+  <p *ngIf="user">Welcome, {{ user.displayName }}!</p>
+  <button (click)="logout()">Logout</button>
+  <button (click)="refreshtoken()">refreshtoken</button>
+</div>

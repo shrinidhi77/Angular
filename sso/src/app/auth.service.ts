@@ -25,4 +25,6 @@ export class AuthService {
   logout(): void {
     window.location.href = `${this.apiUrl}/auth/logout`;
   }
+
+ 
 }
