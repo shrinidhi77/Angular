@@ -1,0 +1,77 @@
+<div style="text-align:center; margin-top:20px">
+    <h1>of() method</h1>
+    <p>of() method:-
+        of() method is used to create an observable using a given set of values.
+        It takes some values like numbers,
+        strings, arrays, and converts them into an Observable sequence.
+    </p>
+</div>
+<pre>
+    <code>
+      import {{ '{' }} of {{ '}' }}  from 'rxjs';
+      let observable = of(["hello", "world"], ['Namaste', 'India']);
+      observable.subscribe(
+        data => console.log("Received value", data),
+        error => console.log("error", error),
+        () => console.log("data stream completed")
+      );
+    </code>
+</pre>
+
+<div style="text-align:center; margin-top:20px">
+    <h1>from() method</h1>
+    <p>of() method:-
+        from() method is used to create an observable from an array, array-like object, a
+        Promise, an iterable object or an Observable like object. We cannot use a number or
+        a boolean value directly to convert into an observable.
+        A string value is treated as an array of characters when passed to from() method..
+    </p>
+</div>
+<pre>
+    <code>
+      import {{ '{' }} from {{ '}' }}  from 'rxjs';
+      let observable = from(["hello", "world"]);
+      observable.subscribe(
+        data => console.log("Received value", data),
+        error => console.log("error", error),
+        () => console.log("data stream completed")
+      );
+    </code>
+</pre>
+<div style="text-align:center; margin-top:20px">
+    <p> difference between of() and from():-
+        1. of() can be used to converts any value such as numbers, strings, boolean, as it 
+        is to an observables, whereas from() accepts only array like values, promises 
+        or an iterable objects to convert them into an observable.
+    </p>
+</div>
+<pre>
+    <code>
+        let observable1 = of(100); /* returns an observable with value 100 */
+        let observable2 = from(100); /* throws type error */
+    </code>
+    <p>of() treats a string as a value and converts to observable as it is where as from() treats string value as an 
+        array of characters and converts them to observable of characters.</p>
+    <code>
+        let observable1 = of("hello"); /* returns an observable with value "hello" */
+        let observable2 = from("hello"); /* returns an observable with values "h", "e", "l", "l", "o" */
+    </code>
+</pre>
+<div style="text-align:center; margin-top:20px">
+    <h1>throwError() method:-</h1>
+    <p>It creates an Observable which does not emit any values to the observer, instead 
+        unsubscribes from the observable by emitting an error notification. It takes an error 
+        that needs to be passed when the observable is subscribed by the subscriber.
+    </p>
+</div>
+<pre>
+    <code>
+      import {{ '{' }} from {{ '}' }}  from 'rxjs';
+      let observable = throwError({{ '{' }}"message": "Something Broke!!" {{ '}' }} );
+      observable.subscribe(
+        data => console.log("Received value", data),
+        error => console.log("error", error),
+        () => console.log("data stream completed")
+      );
+    </code>
+</pre>
