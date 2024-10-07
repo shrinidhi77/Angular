@@ -1,1 +1,42 @@
-<p>transformation-operator works!</p>
+<div style="text-align:center; margin-top:20px">
+    <p>
+        <b>map():-</b>
+        map() operator works the same way like an array map function does. It passes each value
+        through a tranformation function to get an observable
+        with the new transformed values. Observe the given marble diagram for map() operator:
+    </p>
+</div>
+<pre>
+    <code>
+        let productList = products.pipe(map((product) => product.pName));
+    </code>
+</pre>
+<div style="text-align:center; margin-top:20px">
+    <p>
+        <b>mergeMap():-</b>
+    </p>
+    <p>
+        mergeMap() operator maps/projects each source value to an observable which is merged into the output observable.
+
+        Consider a scenario where an Observable emits an array and for each array element we need to fetch some data
+        from the server.
+        We could do this using a map function that calls another function responsible for API calls, and then subscribe
+        to the result.
+
+        i.e. consider an outer Observable with array value from([10, 20, 30, 40]) and getData()
+        is the function that does API calls and returns an observable which is the inner observable. To get the data, we
+        will have to subscribe to both inner as well as outer observables as shown
+    </p>
+    <p>As you can see here, we had to subscribe twice to fetch the data from the observables which makes the things very
+        much complicated. The same can be done in a much easier way using the mergeMap() operator. mergeMap() is
+        actually a combination of mergeAll() and map() operators. mergeMap takes care of subscribing to the inner
+        observable so that we need not subscribe
+        twice as mergeAll will itself merge the values of inner observable to the outer observable.
+        <b> </b>
+    </p>
+</div>
+<pre>
+    <code>
+        let dataObservable2 = arrayObservable2.pipe(mergeMap(param => getData(param)))
+    </code>
+</pre>

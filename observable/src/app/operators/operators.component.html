@@ -1,7 +1,9 @@
-<p>operators works!</p>
+
 <div style="text-align:center; margin-top:20px">
-    <p> RxJS operators are pure functions that enable a functional programming style of dealing with collections. There are mainly two types of operators.
-        
+    <p> RxJS operators are pure functions that enable a functional programming style of dealing with collections. There
+        are mainly two types of operators.
+    </p>
+    <p>
         1. Pipeable Operators:- A pipeable operator is a pure function that takes an observable as its input and returns
         another observable. It does not change anything in the original observable.
 
@@ -11,7 +13,8 @@
         observableInstance.pipe(operator())
 
         example:- filter(), map(), mergeMap(), etc..
-
+    </p>
+    <p>
         2. Creation Operators:- These operators are standalone functions used to create a new Observable. Some of the
         creation operators are of(), from(), etc..
 
@@ -30,7 +33,8 @@
                             class="btn btn-outline-dark mr-3">
                             creation operators
                         </button>
-                        <button [routerLink]="['pipeable']" style="flex-basis: 250px;" class="btn btn-outline-dark">View Orders</button>
+                        <button [routerLink]="['pipeable-operator']" style="flex-basis: 250px;"
+                            class="btn btn-outline-dark">pipeable operators</button>
                     </div>
                 </div>
             </div>

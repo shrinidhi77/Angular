@@ -1,1 +1,51 @@
-<p>mathematical-operator works!</p>
+<div style="text-align:center; margin-top:20px">
+    <p> Mathematical Operators - max() and min():
+        rxjs also provides operators which helps to perform mathematical and arithmetic operations
+        with the observable data stream. These operators are max(), min(), count() and reduce()
+    </p>
+    <p>
+       <b>max():-</b> 
+        This method takes an observable with all the values and returns an observable with the maximum value.
+        It operates on an observable that emits numbers or items that can be compared with a given function and when the
+        source observable completes, max() returns a single value, i.e.
+        highest value. Observe the below marble diagram for max() operator:
+    </p>
+</div>
+<pre>
+    <code>
+        let numbers = of(1, 2, 3, 4, 5, 6);
+        let maxobservable = numbers.pipe(max());
+        maxobservable.subscribe(
+            data => console.log("MAX Received value", data),
+            error => console.log("error", error),
+            () => console.log("data stream completed")
+        );
+    </code>
+</pre>
+<div style="text-align:center; margin-top:20px">
+    <p>
+       <b> Similarly, you can try using min() operator to find the minimum value from the given 
+        observable. </b>
+    </p>
+    <p>
+        reduce():-
+        reduce() method combines together all the values emitted by an observable using an 
+        accumulator function which knows how to join the new value to the already accumulated
+        values of past. Observe the below marble diagram for reduce() operator:
+    </p>
+    <p>
+        <b> reduce() </b> method takes 2 parameters i.e. accumulator_func and a seeder value (optional). 
+        reduce() operator executes the accumulator_func on the observable and returns an 
+        accumulated value in the form of an observable. 
+        seeder is undefined by default and acts as the intial value for accumulation.
+        Note:- If seeder value is provided, reduce() takes that as the initial value, 
+        if not provided, it uses the first value of the observable as the seeder.
+
+        Example:-
+    </p>
+</div>
+<pre>
+    <code>
+        let total_price = products.pipe(reduce((acc, itemsdet) => acc + itemsdet.price, 0));
+    </code>
+</pre>

@@ -1,1 +1,65 @@
-<p>combination-operator works!</p>
+<div style="text-align:center; margin-top:20px">
+    <p> Join Creation Operators - concat():
+        Join Creation Operators help us to join two or more already existing observables.
+        Some of the commonly used Join Creation Operators are concat(), merge(), forkJoin() etc.
+    </p>
+    <p>
+        concat() method:-
+        It Concatenates multiple observables together and emits the values from each observable one after the other. It
+        takes an array of observables or the observables directly as a parameter and then returns a single observable.
+        Observe the given marble diagram to understand use of concat() method:
+        concat() method:-
+        While execution concat will initially subscribe to the first observable and emit all its values, once it
+        completes, it will move on to the next observable passed and again emit its values. This will continue till all
+        the observables are not completed. This means, at a given instant of time,
+        only one of the observables used in concat will be emitting the values and hence concurrent emission
+        of data will not happen. For concurrent execution of observables we can use the operator
+        merge() method which we will see later.
+    </p>
+</div>
+<pre>
+    <code>
+        import {{ '{' }} of {{ '}' }} from 'rxjs';
+        import {{ '{' }} concat {{ '}' }} from 'rxjs/operators';
+        let observable1 = of(10, 20, 30);
+        let observable2 = of(true, false);
+        let observable3 = of("hello", "world");
+        let observable = observable1.pipe(concat(observable2, observable3))
+        observable.subscribe(
+            data => console.log("Received value", data),
+            error => console.log("error", error),
+            () => console.log("data stream completed")
+        );
+    </code>
+</pre>
+<div style="text-align:center; margin-top:20px">
+    <p>observable if there are any but if any observable in the chain throws an error, in the case,
+        concat wont go to the next observable and terminate emitting values immediately.
+    </p>
+    <p>
+        merge() method:-
+        It merges multiple observables together and emits values from each observable concurrently. It takes a set of
+        input observables and creates an output observables that emits values concurrently from the set of
+        input observables. Observe the given marble diagram to understand use of merge() method:
+    </p>
+    <p>
+        merge() will subscribe to all the input observables and forward all the values from input observable to the
+        output observable without doing any transformation. The output observable will complete only after all the
+        observables have completed. Any error in input observable,
+        will immediately be emitted from the output observable and it will emitting values.
+    </p>
+    <p>
+        merge() vs concat():-
+        merge() and concat() would return exactly the same output if the observables have
+        data stream coming synchronously. But as soon as the data stream becomes asynchronous.
+        merge() will start emitting the data concurrently where as concat() will emit the
+        data from the observables one after the other.
+        for the same example, if we use concat operator as below:
+    </p>
+</div>
+<pre>
+    <code>
+        
+    
+    </code>
+</pre>

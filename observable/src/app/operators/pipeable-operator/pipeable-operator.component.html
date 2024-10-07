@@ -1,16 +1,73 @@
 
+<div style="text-align:center; margin-top:20px">
+    <p> Pipeable Operators:
+        We already know Pipeable operators are the ones which take an observable as an input 
+        and returns another observable as a result without affecting the original observable(s).
+    </p>
+    <p>
+        Observables provide a method called pipe() which helps to use multiple operators together in a much readable and maintainable manner:
+        
+    </p>
+    <code>
+        observable.pipe(
+            operator1(),
+            operator2(),
+            operator3(),
+            operator4()
+        )
+    </code>
+    <p>
+        Based on their usage they are further classified into different categories:
 
-<div class="align-middle text text-center">
+        Join Creation Operators
+        
+        Mathematical and Aggregate Operators
+        
+        Transformation Operators
+        
+        Filterting Operators
+        
+        Error Handling Operators
+        
+        Conditional and Boolean Operators
+        
+         
+    </p>
+</div>
+<div class="align-middle text text-center" style="margin-top:20px">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="card shadow">
-                <h2 class="mt-3">Welcome to learning observables</h2>
+                <h2 class="mt-3">Different types operators!!</h2>
                 <div class="card-body">
                     <div style="display: flex; flex-direction: row; justify-content: center;">
-                        <button [routerLink]="['/basic_observables']" style="flex-basis: 250px;" class="btn btn-outline-dark mr-3">
-                            View basic_observables
-                        </button>
-                        <button [routerLink]="['/operators']" style="flex-basis: 250px;" class="btn btn-outline-dark">View operators</button>
+                        <ul>
+                            <li> <button [routerLink]="['combination']" style="flex-basis: 250px; margin: 10px 10px 10px 10px;"
+                                    class="btn btn-outline-dark mr-3">
+                                    Combination operators
+                                </button>
+                            </li>
+                            <li> <button [routerLink]="['transformation']" style="flex-basis: 250px; margin: 10px 10px 10px 10px;"
+                                    class="btn btn-outline-dark">
+                                    Transformation operators
+                                </button>
+                            </li>
+                            <li> <button [routerLink]="['mathmatical']" style="flex-basis: 250px; margin: 10px 10px 10px 10px;"
+                                    class="btn btn-outline-dark mr-3">
+                                    Mathmatical Operators
+                                </button>
+                            </li>
+                            <li> <button [routerLink]="['filtering']" style="flex-basis: 250px; margin: 10px 10px 10px 10px;"
+                                    class="btn btn-outline-dark mr-3">
+                                    Filtering Operators
+                                </button>
+                            </li>
+                            <li> <button [routerLink]="['errorhandling']" style="flex-basis: 250px; margin: 10px 10px 10px 10px;"
+                                    class="btn btn-outline-dark mr-3">
+                                    error handling Operators
+                                </button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

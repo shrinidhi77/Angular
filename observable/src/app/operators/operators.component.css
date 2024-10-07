@@ -1,0 +1,10 @@
+.custom-nav {
+    background-color: white;
+    /* background-color: rgb(247, 107, 137); */
+    color: black;
+}
+
+.nav-link:hover {
+    border-bottom: 2px solid black;
+    background-color: whitesmoke;
+}
